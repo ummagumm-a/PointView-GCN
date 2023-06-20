@@ -110,7 +110,7 @@ def main(args):
 
    
     """ MODEL LOADING """
-    num_class = 40
+    num_class = 26
     MODEL = importlib.import_module(args.model)
     shutil.copy('./models/%s.py' % args.model, str(experiment_dir))
     shutil.copy('./models/pointnet_util.py', str(experiment_dir))
