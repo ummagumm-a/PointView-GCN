@@ -115,9 +115,9 @@ def main(args):
     shutil.copy('%s.py' % args.model, str(experiment_dir))
     shutil.copy('pointnet_util.py', str(experiment_dir))
     #train on the single gpu
-    #classifier = MODEL.get_model(num_class).to(device)
+    classifier = MODEL.get_model(num_class).to(device)
     # train on the multiple gpu
-    classifier = nn.DataParallel(MODEL.get_model(num_class).to(device), device_ids=args.ngpu)
+    # classifier = nn.DataParallel(MODEL.get_model(num_class).to(device), device_ids=args.ngpu)
     criterion = MODEL.get_loss().to(device)
 
     try:
