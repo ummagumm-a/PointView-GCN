@@ -52,5 +52,5 @@ class SinglePoint(torch.utils.data.Dataset):
         class_id = self.classnames.index(class_name)
         point_set = np.loadtxt(self.filepaths[idx])
         filler = np.zeros((self.npoints - len(point_set), 3))
-        point_set = np.vstack(point_set, filler)
+        point_set = np.vstack((point_set, filler))
         return (point_set ,class_id)
