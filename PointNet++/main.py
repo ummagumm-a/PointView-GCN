@@ -181,12 +181,12 @@ def main(args):
                 logger.info('Save model...')
                 savepath = str(checkpoints_dir) + '/best_model.pth'
                 log_string('Saving at %s' % savepath)
-                state = {'epoch': best_epoch,
-                         'instance_acc': _instance_acc,
-                         'class_acc': _class_acc,
-                         'model_state_dict': classifier.modules.state_dict(),
-                         'optimizer_state_dict': optimizer.state_dict()}
-                torch.save(state, savepath)
+                # state = {'epoch': best_epoch,
+                #          'instance_acc': _instance_acc,
+                #          'class_acc': _class_acc,
+                #          'model_state_dict': classifier.modules.state_dict(),
+                #          'optimizer_state_dict': optimizer.state_dict()}
+                # torch.save(state, savepath)
             global_epoch += 1
         log_string('Train Instance Accuracy: %f' % _train_instance_acc)
         log_string('Test Instance Accuracy: %f, Class Accuracy: %f' % (_instance_acc, _class_acc))
