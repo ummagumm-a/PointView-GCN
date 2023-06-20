@@ -184,7 +184,7 @@ def main(args):
                 state = {'epoch': best_epoch,
                          'instance_acc': _instance_acc,
                          'class_acc': _class_acc,
-                         'model_state_dict': classifier.module.state_dict(),
+                         'model_state_dict': classifier.modules.state_dict(),
                          'optimizer_state_dict': optimizer.state_dict()}
                 torch.save(state, savepath)
             global_epoch += 1
