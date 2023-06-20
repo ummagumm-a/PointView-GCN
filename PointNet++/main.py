@@ -112,8 +112,8 @@ def main(args):
     """ MODEL LOADING """
     num_class = 40
     MODEL = importlib.import_module(args.model)
-    shutil.copy('./models/%s.py' % args.model, str(experiment_dir))
-    shutil.copy('./models/pointnet_util.py', str(experiment_dir))
+    shutil.copy('%s.py' % args.model, str(experiment_dir))
+    shutil.copy('pointnet_util.py', str(experiment_dir))
     #train on the single gpu
     #classifier = MODEL.get_model(num_class).to(device)
     # train on the multiple gpu
